@@ -1,4 +1,4 @@
-package model
+package product
 
 // Product is model of product infomration
 type Product struct {

@@ -1,20 +1,18 @@
-package controller
+package product
 
 import (
 	"encoding/json"
 	"net/http"
-
-	"github.com/ballweera/refactor-go-shopping/service"
 )
 
 // ProductController is the controller of product information
 type ProductController struct {
-	service *service.ProductService
+	service *ProductService
 }
 
 // NewProductController returns instance of ProductController
 func NewProductController() *ProductController {
-	return &ProductController{service: service.NewProductService()}
+	return &ProductController{service: NewProductService()}
 }
 
 // GetAllProducts returns all products information

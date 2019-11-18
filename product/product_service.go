@@ -1,23 +1,18 @@
-package service
-
-import (
-	"github.com/ballweera/refactor-go-shopping/dao"
-	"github.com/ballweera/refactor-go-shopping/model"
-)
+package product
 
 // ProductService is service wrapper of product information
 type ProductService struct {
-	productDAO *dao.ProductDAO
+	productDAO *ProductDAO
 }
 
 // NewProductService instantiates ProductService
 func NewProductService() *ProductService {
 	return &ProductService{
-		productDAO: dao.NewProductDAO(),
+		productDAO: NewProductDAO(),
 	}
 }
 
 // GetAllProducts return list of products
-func (s *ProductService) GetAllProducts() []model.Product {
+func (s *ProductService) GetAllProducts() []Product {
 	return s.productDAO.GetAllProducts()
 }
