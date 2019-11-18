@@ -1,17 +1,20 @@
 package main
 
 import (
-	"github.com/ballweera/refactor-go-shopping/controller"
-	"github.com/gorilla/mux"
 	"log"
 	"net/http"
 	"time"
+
+	"github.com/ballweera/refactor-go-shopping/controller"
+	"github.com/gorilla/mux"
 )
 
 func main() {
 	r := mux.NewRouter()
 	r.HandleFunc("/home", controller.Home)
-	r.HandleFunc("/products/all", controller.GetAllProducts)
+
+	productCtrl := controller.NewProductController()
+	r.HandleFunc("/products/all", productCtrl.GetAllProducts)
 	srv := &http.Server{
 		Addr:         ":9090",
 		Handler:      r,
