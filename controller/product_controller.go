@@ -12,9 +12,9 @@ type ProductController struct {
 	service *service.ProductService
 }
 
-// New returns instance of ProductController
+// NewProductController returns instance of ProductController
 func NewProductController() *ProductController {
-	return &ProductController{service: &service.ProductService{}}
+	return &ProductController{service: service.NewProductService()}
 }
 
 // GetAllProducts returns all products information
