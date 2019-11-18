@@ -11,6 +11,7 @@ import (
 func main() {
 	r := mux.NewRouter()
 	r.HandleFunc("/home", controller.Home)
+	r.HandleFunc("/products/all", controller.GetAllProducts)
 	srv := &http.Server{
 		Addr:         ":9090",
 		Handler:      r,
