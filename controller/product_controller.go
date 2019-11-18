@@ -1,14 +1,16 @@
 package controller
 
-import "net/http"
+import (
+	"encoding/json"
+	"net/http"
 
-import "encoding/json"
+	"github.com/ballweera/refactor-go-shopping/model"
+)
 
 // GetAllProducts returns all products information
 func GetAllProducts(w http.ResponseWriter, r *http.Request) {
-	products := map[string]string{
-		"status": "ok",
+	products := []model.Product{
+		model.Product{SKU: "12345", Name: "iPhone", Price: 1000.00, Unit: 100},
 	}
-
 	json.NewEncoder(w).Encode(products)
 }
