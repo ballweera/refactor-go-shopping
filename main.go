@@ -24,12 +24,15 @@ func main() {
 
 	productCtrl := product.NewProductController()
 	r.HandleFunc("/products/all", productCtrl.GetAllProducts)
+
+	userCtrl := controller.NewUserController()
+	r.HandleFunc("/register", userCtrl.Register)
 	srv := &http.Server{
 		Addr:         ":9090",
 		Handler:      r,
 		WriteTimeout: 15 * time.Second,
 		ReadTimeout:  15 * time.Second,
-		IdleTimeout:  time.Second * 60,
+		IdleTimeout:  1 * time.Minute,
 	}
 
 	go func() {
