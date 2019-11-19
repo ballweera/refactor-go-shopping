@@ -23,7 +23,8 @@ func main() {
 	productCtrl := controller.NewProductController()
 	r.HandleFunc("/products/all", productCtrl.GetAllProducts)
 
-	r.HandleFunc("/register", controller.Register)
+	userCtrl := controller.NewUserController()
+	r.HandleFunc("/register", userCtrl.Register)
 	srv := &http.Server{
 		Addr:         ":9090",
 		Handler:      r,
