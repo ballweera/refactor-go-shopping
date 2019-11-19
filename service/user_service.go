@@ -1,6 +1,9 @@
 package service
 
-import "github.com/ballweera/refactor-go-shopping/model"
+import (
+	"github.com/ballweera/refactor-go-shopping/dao"
+	"github.com/ballweera/refactor-go-shopping/model"
+)
 
 // UserService is service of user information
 type UserService struct {
@@ -13,9 +16,6 @@ func NewUserService() *UserService {
 
 // Register creates new user
 func (s *UserService) Register() model.User {
-	return model.User{
-		ID:    1,
-		Name:  "Brown",
-		Email: "brown@cafe.com",
-	}
+	userDAO := dao.NewUserDAO()
+	return userDAO.Register()
 }
