@@ -1,10 +1,15 @@
 package controller
 
-import "net/http"
+import (
+	"encoding/json"
+	"net/http"
 
-import "encoding/json"
+	"github.com/ballweera/refactor-go-shopping/service"
+)
 
 // Register adds new user
 func Register(w http.ResponseWriter, r *http.Request) {
-	json.NewEncoder(w).Encode(map[string]string{"name": "ballweera"})
+	userService := service.NewUserService()
+	u := userService.Register()
+	json.NewEncoder(w).Encode(u)
 }
