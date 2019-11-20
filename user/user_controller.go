@@ -5,20 +5,20 @@ import (
 	"net/http"
 )
 
-// Controller is controller of user
-type Controller struct {
+// Handler is controller of user
+type Handler struct {
 	service *Service
 }
 
 // NewUserController instantiate UserController
-func NewUserController() *Controller {
-	return &Controller{
+func NewUserController() *Handler {
+	return &Handler{
 		service: NewUserService(),
 	}
 }
 
 // Register adds new user
-func (ctrl *Controller) Register(w http.ResponseWriter, r *http.Request) {
+func (ctrl *Handler) Register(w http.ResponseWriter, r *http.Request) {
 	u := ctrl.service.Register()
 	json.NewEncoder(w).Encode(u)
 }
