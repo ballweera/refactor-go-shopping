@@ -9,7 +9,6 @@ import (
 	"os/signal"
 	"time"
 
-	"github.com/ballweera/refactor-go-shopping/controller"
 	"github.com/ballweera/refactor-go-shopping/product"
 	"github.com/ballweera/refactor-go-shopping/user"
 	"github.com/gorilla/mux"
@@ -21,7 +20,6 @@ func main() {
 	flag.Parse()
 
 	r := mux.NewRouter()
-	r.HandleFunc("/home", controller.Home)
 
 	productCtrl := product.NewProductHandler()
 	r.HandleFunc("/products/all", productCtrl.GetAllProducts)
