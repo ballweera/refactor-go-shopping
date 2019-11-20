@@ -15,7 +15,7 @@ type UserHandler struct {
 // NewUserHandler instantiate handler of user module
 func NewUserHandler() *UserHandler {
 	return &UserHandler{
-		service: user.NewUserService(),
+		service: user.NewService(),
 	}
 }
 

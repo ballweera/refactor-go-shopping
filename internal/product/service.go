@@ -5,10 +5,10 @@ type Service struct {
 	productDAO *DAO
 }
 
-// NewProductService instantiates service of product module
-func NewProductService() *Service {
+// NewService instantiates service of product module
+func NewService() *Service {
 	return &Service{
-		productDAO: NewProductDAO(),
+		productDAO: NewDAO(),
 	}
 }
 

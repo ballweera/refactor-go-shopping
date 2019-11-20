@@ -3,8 +3,8 @@ package product
 // DAO is DAO of product information
 type DAO struct{}
 
-// NewProductDAO instantiates ProductDAO
-func NewProductDAO() *DAO {
+// NewDAO instantiates ProductDAO
+func NewDAO() *DAO {
 	return &DAO{}
 }
 

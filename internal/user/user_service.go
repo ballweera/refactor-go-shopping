@@ -4,13 +4,13 @@ package user
 type Service struct {
 }
 
-// NewUserService instantiates UserService
-func NewUserService() *Service {
+// NewService instantiates UserService
+func NewService() *Service {
 	return &Service{}
 }
 
 // Register creates new user
 func (s *Service) Register() User {
-	userDAO := NewUserDAO()
+	userDAO := NewDAO()
 	return userDAO.Register()
 }

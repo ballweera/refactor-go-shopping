@@ -14,7 +14,7 @@ type ProductHandler struct {
 
 // NewProductHandler returns handler of product module
 func NewProductHandler() *ProductHandler {
-	return &ProductHandler{service: product.NewProductService()}
+	return &ProductHandler{service: product.NewService()}
 }
 
 // GetAllProducts returns all products information

@@ -3,8 +3,8 @@ package user
 // DAO is DAO of User information
 type DAO struct{}
 
-// NewUserDAO instantiates UserDAO
-func NewUserDAO() *DAO {
+// NewDAO instantiates UserDAO
+func NewDAO() *DAO {
 	return &DAO{}
 }
 
