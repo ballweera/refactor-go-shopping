@@ -10,8 +10,8 @@ type Handler struct {
 	service *Service
 }
 
-// NewUserController instantiate UserController
-func NewUserController() *Handler {
+// NewUserHandler instantiate handler of user module
+func NewUserHandler() *Handler {
 	return &Handler{
 		service: NewUserService(),
 	}
