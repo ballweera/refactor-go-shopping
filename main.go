@@ -9,8 +9,8 @@ import (
 	"os/signal"
 	"time"
 
-	"github.com/ballweera/refactor-go-shopping/product"
-	"github.com/ballweera/refactor-go-shopping/user"
+	"github.com/ballweera/refactor-go-shopping/internal/product"
+	"github.com/ballweera/refactor-go-shopping/internal/user"
 	"github.com/gorilla/mux"
 )
 
