@@ -1,19 +1,21 @@
-package user
+package handlers
 
 import (
 	"encoding/json"
 	"net/http"
+
+	"github.com/ballweera/refactor-go-shopping/internal/user"
 )
 
 // Handler is controller of user
 type Handler struct {
-	service *Service
+	service *user.Service
 }
 
 // NewUserHandler instantiate handler of user module
 func NewUserHandler() *Handler {
 	return &Handler{
-		service: NewUserService(),
+		service: user.NewUserService(),
 	}
 }
 

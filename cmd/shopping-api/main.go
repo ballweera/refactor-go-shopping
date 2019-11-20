@@ -9,8 +9,7 @@ import (
 	"os/signal"
 	"time"
 
-	"github.com/ballweera/refactor-go-shopping/internal/product"
-	"github.com/ballweera/refactor-go-shopping/internal/user"
+	"github.com/ballweera/refactor-go-shopping/cmd/shopping-api/handlers"
 	"github.com/gorilla/mux"
 )
 
@@ -21,11 +20,11 @@ func main() {
 
 	r := mux.NewRouter()
 
-	productCtrl := product.NewProductHandler()
-	r.HandleFunc("/products/all", productCtrl.GetAllProducts)
+	productHandler := handlers.NewProductHandler()
+	r.HandleFunc("/products/all", productHandler.GetAllProducts)
 
-	userCtrl := user.NewUserHandler()
-	r.HandleFunc("/register", userCtrl.Register)
+	userHandler := handlers.NewUserHandler()
+	r.HandleFunc("/register", userHandler.Register)
 	srv := &http.Server{
 		Addr:         ":9090",
 		Handler:      r,
