@@ -1,18 +1,18 @@
 package product
 
-// ProductService is service wrapper of product information
-type ProductService struct {
-	productDAO *ProductDAO
+// Service is service wrapper of product information
+type Service struct {
+	productDAO *DAO
 }
 
-// NewProductService instantiates ProductService
-func NewProductService() *ProductService {
-	return &ProductService{
+// NewProductService instantiates service of product module
+func NewProductService() *Service {
+	return &Service{
 		productDAO: NewProductDAO(),
 	}
 }
 
 // GetAllProducts return list of products
-func (s *ProductService) GetAllProducts() []Product {
+func (s *Service) GetAllProducts() []Product {
 	return s.productDAO.GetAllProducts()
 }

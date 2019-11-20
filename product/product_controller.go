@@ -5,18 +5,18 @@ import (
 	"net/http"
 )
 
-// ProductController is the controller of product information
-type ProductController struct {
-	service *ProductService
+// Handler is the controller of product information
+type Handler struct {
+	service *Service
 }
 
-// NewProductController returns instance of ProductController
-func NewProductController() *ProductController {
-	return &ProductController{service: NewProductService()}
+// NewProductHandler returns handler of product module
+func NewProductHandler() *Handler {
+	return &Handler{service: NewProductService()}
 }
 
 // GetAllProducts returns all products information
-func (ctrl *ProductController) GetAllProducts(w http.ResponseWriter, r *http.Request) {
+func (ctrl *Handler) GetAllProducts(w http.ResponseWriter, r *http.Request) {
 	products := ctrl.service.GetAllProducts()
 	json.NewEncoder(w).Encode(products)
 }

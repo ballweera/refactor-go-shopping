@@ -23,7 +23,7 @@ func main() {
 	r := mux.NewRouter()
 	r.HandleFunc("/home", controller.Home)
 
-	productCtrl := product.NewProductController()
+	productCtrl := product.NewProductHandler()
 	r.HandleFunc("/products/all", productCtrl.GetAllProducts)
 
 	userCtrl := user.NewUserHandler()

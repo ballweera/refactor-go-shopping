@@ -1,15 +1,15 @@
 package product
 
-// ProductDAO is DAO of product information
-type ProductDAO struct{}
+// DAO is DAO of product information
+type DAO struct{}
 
 // NewProductDAO instantiates ProductDAO
-func NewProductDAO() *ProductDAO {
-	return &ProductDAO{}
+func NewProductDAO() *DAO {
+	return &DAO{}
 }
 
 // GetAllProducts returns list of products
-func (dao *ProductDAO) GetAllProducts() []Product {
+func (dao *DAO) GetAllProducts() []Product {
 	products := []Product{
 		{SKU: "12345", Name: "iPhone", Price: 100.00, Unit: 100},
 		{SKU: "22345", Name: "Pixel 4", Price: 70.00, Unit: 200},
