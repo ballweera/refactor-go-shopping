@@ -1,6 +1,4 @@
-package dao
-
-import "github.com/ballweera/refactor-go-shopping/model"
+package user
 
 // UserDAO is DAO of User information
 type UserDAO struct{}
@@ -11,8 +9,8 @@ func NewUserDAO() *UserDAO {
 }
 
 // Register creates new user
-func (dao UserDAO) Register() model.User {
-	return model.User{
+func (dao UserDAO) Register() User {
+	return User{
 		ID:    1,
 		Name:  "Brown",
 		Email: "brown@cafe.com",

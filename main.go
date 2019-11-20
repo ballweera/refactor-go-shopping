@@ -11,6 +11,7 @@ import (
 
 	"github.com/ballweera/refactor-go-shopping/controller"
 	"github.com/ballweera/refactor-go-shopping/product"
+	"github.com/ballweera/refactor-go-shopping/user"
 	"github.com/gorilla/mux"
 )
 
@@ -25,7 +26,7 @@ func main() {
 	productCtrl := product.NewProductController()
 	r.HandleFunc("/products/all", productCtrl.GetAllProducts)
 
-	userCtrl := controller.NewUserController()
+	userCtrl := user.NewUserController()
 	r.HandleFunc("/register", userCtrl.Register)
 	srv := &http.Server{
 		Addr:         ":9090",
